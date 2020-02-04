@@ -1,0 +1,16 @@
+{
+    "background_color": "#007bff",
+    "description": "MWS Restaurant",
+    "display": "fullscreen",
+    "theme_color": "#2196F3",
+    "icons": [
+        {
+            "src": "/icons/launcher-icon-5x.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "name": "MWS Restaurant",
+    "short_name": "Restaurant",
+    "start_url": "/"
+}

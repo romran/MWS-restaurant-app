@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').then(function (registration) {
+        // Registration was successful
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }, function (err) {
+        // registration failed :(
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    }
+  </script>
+
+  <link rel="stylesheet" src="css/normalize.min.css" />
+  <link rel="stylesheet" href="css/common.css">
+  <style>
+    nav {
+      width: 100%;
+      background-color: #252831;
+      text-align: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav h1 {
+      padding: 30px 0;
+      margin: auto;
+    }
+
+    nav h1 a {
+      color: #fff;
+      font-size: 14pt;
+      font-weight: 200;
+      letter-spacing: 10px;
+      text-transform: uppercase;
+    }
+
+    #breadcrumb {
+      padding: 10px 40px 16px;
+      list-style: none;
+      background-color: #eee;
+      font-size: 17px;
+      margin: 0;
+      width: calc(50% - 0px);
+    }
+
+    @media only screen and (max-width: 760px) {
+      #breadcrumb {
+        width: 100%;
+      }
+    }
+
+    #breadcrumb li {
+      display: inline;
+    }
+
+    #breadcrumb li+li:before {
+      padding: 8px;
+      color: black;
+      content: "/\00a0";
+    }
+
+    #breadcrumb li a {
+      color: #171414;
+      text-decoration: none;
+    }
+
+    #breadcrumb li a:hover {
+      color: #01447e;
+      text-decoration: underline;
+    }
+  </style>
+
+  <link rel="stylesheet" href="css/restaurant.css" type="text/css">
+  <link rel="shortcut icon" type="image/x-icon" href="/icons/favi.ico" />
+  <meta name="theme-color" content="#2196F3">
+  <link rel="manifest" href="/manifest.json">
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Info</title>
+
+</head>
+
+<body class="inside">
+  <!-- Beginning header -->
+  <header>
+    <!-- Beginning nav -->
+    <nav>
+      <h1>
+        <a href="/">Restaurant Reviews</a>
+      </h1>
+    </nav>
+    <!-- Beginning breadcrumb -->
+    <ul id="breadcrumb" role="navigation">
+      <li>
+        <a href="/">Home</a>
+      </li>
+    </ul>
+    <!-- End breadcrumb -->
+    <!-- End nav -->
+  </header>
+  <!-- End header -->
+
+  <!-- Beginning main -->
+  <main id="maincontent">
+
+    <!-- Beginning map -->
+    <section id="map-container">
+      <div id="map" role="application"></div>
+    </section>
+    <!-- End map -->
+
+    <!-- Beginning restaurant -->
+    <section id="restaurant-container">
+      <h2 id="restaurant-name" tabindex="0"></h2>
+      <img id="restaurant-img">
+      <p id="restaurant-cuisine"></p>
+      <p id="restaurant-address" tabindex="0"></p>
+      <table id="restaurant-hours" tabindex="0"></table>
+    </section>
+    <!-- end restaurant -->
+
+    <!-- Beginning reviews -->
+    <section id="reviews-container" tabindex="0">
+      <ul id="reviews-list"></ul>
+    </section>
+    <!-- End reviews -->
+
+  </main>
+  <!-- End main -->
+
+  <!-- Beginning footer -->
+  <footer id="footer">
+    Copyright (c) 2017
+    <a href="/">
+      <strong>Restaurant Reviews</strong>
+    </a> All Rights Reserved.
+  </footer>
+  <!-- End footer -->
+
+
+  <!-- Google Maps -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsgZOXiyO2TKnV-mvrSN4JLu2w8N_h3YE&libraries=places&callback=initMap"></script>
+   <!-- Main javascript file -->
+  <script type="application/javascript" charset="utf-8" src="js/restaurant_info_bundle.js"></script>
+
+
+  <!-- End scripts -->
+
+</body>
+
+</html>
