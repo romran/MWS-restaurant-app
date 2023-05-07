@@ -23,7 +23,7 @@
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babelify": "^8.0.0",
-    "browser-sync": "^2.23.6",
+    "browser-sync": "^2.29.1",
     "browserify": "^16.1.1",
     "gulp": "^3.9.1",
     "gulp-htmlmin": "^4.0.0",
